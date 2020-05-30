@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Register</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/register.png"/>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/preview.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	
+	<script>
+	$(document).ready(function() 
+	{
+		$("#prevbtn").click(function() 
+		{
+		
+			$("#pname").text($("#name").val());
+			$("#pregtype").text($("input[name='regtype']:checked").val());
+			$("#pemail").text($("#email").val());
+			$("#pmobile").text($("#mob").val());
+				function readURL(input)
+				{
+					if (input.files && input.files[0]) 
+					{ 
+						var reader = new FileReader(); 
+						reader.onload = function(e)
+						{ 
+							$('#pimage').attr('src', e.target.result);
+						} 
+					reader.readAsDataURL(input.files[0]);
+					}
+				} 
+				$("#image").change(function(){
+				readURL(this);
+				});	
+
+		});
+
+	});
+	
+	
+
+
+
+	</script>
+	<style>
+		.form-popup {font-family: Arial, Helvetica, sans-serif;}
+		* {box-sizing: border-box;}
+
+		/* Button used to open the contact form - fixed at the bottom of the page */
+		.open-button {
+		  background-color: #555;
+		  color: white;
+		  padding: 16px 20px;
+		  border: none;
+		  cursor: pointer;
+		  opacity: 0.8;
+		  position: fixed;
+		  bottom: 23px;
+		  right: 68px;
+		  width: 280px;
+		}
+
+		/* The popup form - hidden by default */
+		.form-popup {
+		  display: none;
+		  position: fixed;
+		  bottom: 40px;
+		  right: 40px;
+		  border: 3px solid #f1f1f1;
+		  z-index: 9;
+		}
+
+		/* Add styles to the form container */
+		.form-container {
+		  max-width: 360px;
+		  padding: 10px;
+		  background-color: white;
+		}
+
+		/* Full-width input fields */
+		.form-container input[type=text], .form-container input[type=password] {
+		  width: 100%;
+		  padding: 15px;
+		  margin: 5px 0 22px 0;
+		  border: none;
+		  background: #f1f1f1;
+		}
+
+		/* When the inputs get focus, do something */
+		.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+		  background-color: #ddd;
+		  outline: none;
+		}
+
+		/* Set a style for the submit/login button */
+		.form-container .btn {
+		  background-color: #4CAF50;
+		  color: white;
+		  padding: 16px 20px;
+		  border: none;
+		  cursor: pointer;
+		  width: 100%;
+		  margin-bottom:10px;
+		  opacity: 0.8;
+		}
+
+		/* Add a red background color to the cancel button */
+		.form-container .cancel {
+		  background-color: red;
+		}
+
+		/* Add some hover effects to buttons */
+		.form-container .btn:hover, .open-button:hover {
+		  opacity: 1;
+		}
+	</style>
+	
+	
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30" id="prevtext">
+				<form class="login100-form validate-form" name="dataform" action="connection.php" method="post" enctype="multipart/form-data">
+					<span class="login100-form-title p-b-55">
+						Register
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid name is required">
+						<input class="input100" type="text" id="name" name="name" placeholder="Full Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-user"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" id="email" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-envelope"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid Mobile Number is required">
+						<input class="input100" type="tel" id="mob" name="mob" placeholder="Mobile Number">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-phone-handset"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+						<input class="input100" type="password" id="pass" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-lock"></span>
+						</span>
+					</div>
+					
+					
+					<div class="wrap-input100 d-flex justify-content-between validate-input m-b-16" data-validate = "Image size <1MB is required">					
+						<input class="input100 p-3" type="file" id="image" name="image" placeholder="upload file" accept=".png, .jpg, .jpeg">
+						<!--<span class="symbol-input100 p-2">
+							<span class="lnr lnr-picture"></span>
+						</span>-->
+					</div>
+					
+					<div class="wrap-input100 m-b-16">
+						<label for="regtype" class="input100 label label-default" name="registype" content="Registration Type"><br>Registration Type</label>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-list"></span>
+						</span>
+					</div>
+					
+					
+					<input class="input40 p-3" type="radio" id="regtype" name="regtype" placeholder="Self" value="Self">Self
+					<input class="input40 p-3" type="radio" id="regtype" name="regtype" placeholder="Group" value="Group">Group
+					<input class="input40 p-3" type="radio" id="regtype" name="regtype" placeholder="Corporate" value="Corporate">Corporate
+					<input class="input40 p-3" type="radio" id="regtype" name="regtype" placeholder="Corporate" value="Others">Others<br><br>
+					
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Enter Ticket amount You Need">
+						<input class="input100" type="number" id="ticket" name="ticket" placeholder="Number of Tickets">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100 p-3">
+							<span class="lnr lnr-dice"></span>
+						</span>
+					</div>
+					
+					
+					<div class="container-login100-form-btn p-t-25">
+						<input type="button"  class="login100-form-btn" id="prevbtn" value="PREVIEW" onclick="openForm()">
+							
+						</input>
+					</div>
+					
+					
+					<div class="container-login100-form-btn p-t-25">
+						<button class="login100-form-btn" id="regbtn">
+							REGISTER
+						</button>
+					</div>
+				</form>
+
+			<!--		<div class="text-center w-full p-t-42 p-b-22">
+						<span class="txt1">
+							Or login with
+						</span>
+					</div>
+
+					<a href="#" class="btn-face m-b-10">
+						<i class="fa fa-facebook-official"></i>
+						Facebook
+					</a>
+
+					<a href="#" class="btn-google m-b-10">
+						<img src="images/icons/icon-google.png" alt="GOOGLE">
+						Google
+					</a>
+			-->
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="js/main.js"></script>	
+	
+	
+	<div class="form-popup" id="myForm">
+	  <form class="form-container">
+	    <h4 align="center">PREVIEW</h4><br>
+	    <img class="card-img-top" id="pimage"  alt="If Image not display please re-upload and double click a photo"/>
+		<div class="card-body text-center">
+			<h4 class="card-title" id="pname">  </h4>
+			<h6 class="card-subtitle mb-2 text-muted" id="pregtype">  </h6>
+			<p class="card-text" id="pemail">  </p>
+			<p class="card-text" id="pmobile">  </p><br>
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		</div>
+	  </form>
+	</div>
+
+	<script>
+	function openForm() {
+	  document.getElementById("myForm").style.display = "block";
+	}
+
+	function closeForm() {
+	  document.getElementById("myForm").style.display = "none";
+	}
+	</script>
+
+
+
+</body>
+</html>
